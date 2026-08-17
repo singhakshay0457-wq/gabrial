@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import { Sparkles, ArrowRight, ShieldCheck, Award, HeartHandshake, X } from 'lucide-react';
 
-interface BrandStoryProps {
-  onOpenBespoke: () => void;
-}
+interface BrandStoryProps {}
 
-export const BrandStory: React.FC<BrandStoryProps> = ({ onOpenBespoke }) => {
+export const BrandStory: React.FC<BrandStoryProps> = () => {
   const [showStoryModal, setShowStoryModal] = useState(false);
 
   return (
@@ -78,13 +76,6 @@ export const BrandStory: React.FC<BrandStoryProps> = ({ onOpenBespoke }) => {
                 <span>Discover Our Story</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </button>
-
-              <button
-                onClick={onOpenBespoke}
-                className="w-full sm:w-auto px-8 py-3.5 bg-transparent border border-[#C5A059]/60 text-[#E8D3A7] hover:bg-[#C5A059]/10 transition-colors text-xs uppercase tracking-[0.25em] font-medium"
-              >
-                Book Bespoke Session
-              </button>
             </div>
 
           </div>
@@ -119,7 +110,7 @@ export const BrandStory: React.FC<BrandStoryProps> = ({ onOpenBespoke }) => {
                 In our atelier, master craftspeople dedicated to traditional stone setting, hand-engraving, and custom CAD modeling spend dozens of hours refining each curve. We work strictly with 18K solid gold and 950 Platinum, never plating or filling.
               </p>
               <p>
-                Whether crafting a bespoke engagement solitaire or a daily tennis bracelet, our commitment remains absolute: fine jewellery that feels effortless, wears comfortably, and becomes part of your family’s legacy.
+                Whether crafting a fine engagement solitaire or a daily tennis bracelet, our commitment remains absolute: fine jewellery that feels effortless, wears comfortably, and becomes part of your family’s legacy.
               </p>
             </div>
 
@@ -130,13 +121,10 @@ export const BrandStory: React.FC<BrandStoryProps> = ({ onOpenBespoke }) => {
               </div>
 
               <button
-                onClick={() => {
-                  setShowStoryModal(false);
-                  onOpenBespoke();
-                }}
+                onClick={() => setShowStoryModal(false)}
                 className="bg-[#C5A059] text-white px-6 py-2.5 text-xs uppercase tracking-widest font-medium hover:bg-[#B08C46] transition-colors"
               >
-                Schedule Atelier Visit
+                Close Story
               </button>
             </div>
 

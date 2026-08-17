@@ -4,12 +4,11 @@ import { X, User, Package, Calendar, Award, LogOut, CheckCircle2 } from 'lucide-
 interface AccountModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onOpenBespoke: () => void;
 }
 
-export const AccountModal: React.FC<AccountModalProps> = ({ isOpen, onClose, onOpenBespoke }) => {
+export const AccountModal: React.FC<AccountModalProps> = ({ isOpen, onClose }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
-  const [activeTab, setActiveTab] = useState<'profile' | 'orders' | 'appointments'>('profile');
+  const [activeTab, setActiveTab] = useState<'profile' | 'orders'>('profile');
 
   if (!isOpen) return null;
 
@@ -48,14 +47,6 @@ export const AccountModal: React.FC<AccountModalProps> = ({ isOpen, onClose, onO
           >
             Saved Design Notes
           </button>
-          <button
-            onClick={() => setActiveTab('appointments')}
-            className={`py-3 px-4 border-b-2 transition-all ${
-              activeTab === 'appointments' ? 'border-[#C5A059] text-[#C5A059]' : 'border-transparent text-[#57534E]'
-            }`}
-          >
-            Atelier Appointments
-          </button>
         </div>
 
         {/* Profile Tab */}
@@ -90,14 +81,7 @@ export const AccountModal: React.FC<AccountModalProps> = ({ isOpen, onClose, onO
               </div>
             </div>
 
-            <div className="pt-4 flex justify-between items-center border-t border-[#E8E5DA]">
-              <button
-                onClick={onOpenBespoke}
-                className="bg-[#C5A059] text-white px-6 py-2.5 text-xs uppercase tracking-widest font-medium hover:bg-[#B08C46]"
-              >
-                Book Bespoke Session
-              </button>
-
+            <div className="pt-4 flex justify-end items-center border-t border-[#E8E5DA]">
               <button
                 onClick={() => alert('Logged out successfully.')}
                 className="text-[#57534E] hover:text-red-700 font-medium uppercase tracking-wider flex items-center gap-1"
@@ -114,11 +98,11 @@ export const AccountModal: React.FC<AccountModalProps> = ({ isOpen, onClose, onO
             <div className="p-4 bg-[#F3F0E6] border border-[#E2DDD0]">
               <div className="flex justify-between items-start pb-2 border-b border-[#E2DDD0]">
                 <div>
-                  <span className="font-mono text-sm font-semibold text-[#1C1917]">Design Consult #GAB-849201</span>
+                  <span className="font-mono text-sm font-semibold text-[#1C1917]">Design Inquiry #GAB-849201</span>
                   <p className="text-[#57534E] text-[11px]">Saved on July 14, 2026</p>
                 </div>
                 <span className="bg-[#C5A059]/10 text-[#C5A059] text-[10px] px-2.5 py-1 uppercase tracking-wider font-semibold border border-[#C5A059]/30">
-                  Custom Engagement Ring
+                  Solitaire Engagement Ring
                 </span>
               </div>
               <div className="pt-3 flex justify-between items-center">
@@ -130,7 +114,7 @@ export const AccountModal: React.FC<AccountModalProps> = ({ isOpen, onClose, onO
             <div className="p-4 bg-[#F3F0E6] border border-[#E2DDD0]">
               <div className="flex justify-between items-start pb-2 border-b border-[#E2DDD0]">
                 <div>
-                  <span className="font-mono text-sm font-semibold text-[#1C1917]">Design Consult #GAB-729104</span>
+                  <span className="font-mono text-sm font-semibold text-[#1C1917]">Design Inquiry #GAB-729104</span>
                   <p className="text-[#57534E] text-[11px]">Saved on May 28, 2026</p>
                 </div>
                 <span className="bg-[#C5A059]/10 text-[#C5A059] text-[10px] px-2.5 py-1 uppercase tracking-wider font-semibold border border-[#C5A059]/30">
@@ -142,28 +126,6 @@ export const AccountModal: React.FC<AccountModalProps> = ({ isOpen, onClose, onO
                 <span className="text-xs font-semibold text-[#C5A059]">18K Gold • 2.2 Ct Emerald</span>
               </div>
             </div>
-          </div>
-        )}
-
-        {/* Appointments Tab */}
-        {activeTab === 'appointments' && (
-          <div className="space-y-4 text-xs">
-            <div className="p-4 bg-[#F3F0E6] border border-[#E2DDD0] flex justify-between items-center">
-              <div>
-                <span className="font-semibold text-[#1C1917] block text-sm">Bespoke Diamond Solitaire Consultation</span>
-                <span className="text-[#57534E]">Mumbai Flagship Atelier • August 18, 2026 at 3:00 PM</span>
-              </div>
-              <span className="bg-[#C5A059]/20 text-[#1C1917] text-[10px] px-2.5 py-1 uppercase tracking-wider font-semibold border border-[#C5A059]">
-                Confirmed
-              </span>
-            </div>
-
-            <button
-              onClick={onOpenBespoke}
-              className="w-full bg-[#1C1917] text-white py-3 text-xs uppercase tracking-widest font-medium hover:bg-[#C5A059]"
-            >
-              + Schedule New Atelier Appointment
-            </button>
           </div>
         )}
 

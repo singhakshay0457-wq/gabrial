@@ -2,13 +2,11 @@ import React from 'react';
 import { MapPin, Sparkles, ArrowRight, ShieldCheck, Gem, Calendar, ExternalLink } from 'lucide-react';
 
 interface ShowcaseBannersProps {
-  onOpenBespoke: () => void;
   onScrollToMap: () => void;
   onScrollToCatalog: () => void;
 }
 
 export const ShowcaseBanners: React.FC<ShowcaseBannersProps> = ({
-  onOpenBespoke,
   onScrollToMap,
   onScrollToCatalog,
 }) => {
@@ -44,7 +42,7 @@ export const ShowcaseBanners: React.FC<ShowcaseBannersProps> = ({
               </h2>
 
               <p className="text-sm sm:text-base text-[#D4CEBF] font-light max-w-2xl leading-relaxed">
-                Visit our premier Sydney boutique located at <strong className="text-white font-medium">297 Old Northern Rd, Castle Hill NSW 2154</strong>. Inspect certified GIA/SGL solitaire diamonds, custom wedding bands, and bespoke high jewellery creations in a private lounge.
+                Visit our premier Sydney boutique located at <strong className="text-white font-medium">297 Old Northern Rd, Castle Hill NSW 2154</strong>. Inspect certified GIA/SGL solitaire diamonds, wedding bands, and high fine jewellery creations in a private lounge.
               </p>
 
               <div className="flex flex-wrap items-center gap-4 text-xs text-[#E8D3A7]">
@@ -76,14 +74,6 @@ export const ShowcaseBanners: React.FC<ShowcaseBannersProps> = ({
                 <span>Direct Google Map</span>
                 <ExternalLink className="w-4 h-4 text-[#C5A059]" />
               </a>
-
-              <button
-                onClick={onOpenBespoke}
-                className="px-6 py-3.5 bg-transparent border border-[#C5A059]/60 hover:bg-[#C5A059]/20 text-[#FAF9F5] text-xs uppercase tracking-[0.2em] font-medium transition-colors flex items-center justify-center gap-2"
-              >
-                <Calendar className="w-4 h-4 text-[#C5A059]" />
-                <span>Schedule Private Session</span>
-              </button>
             </div>
           </div>
         </div>
@@ -97,11 +87,11 @@ export const ShowcaseBanners: React.FC<ShowcaseBannersProps> = ({
           <div className="space-y-4">
             <div className="flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-[#C5A059] font-medium">
               <Sparkles className="w-4 h-4" />
-              <span>Bespoke Atelier Service</span>
+              <span>Atelier Service</span>
             </div>
 
             <h3 className="font-serif text-2xl sm:text-3xl font-normal text-[#1C1917]">
-              Custom Engagement & Heirloom Remodelling
+              Heirloom Remodelling & Fine Design
             </h3>
 
             <p className="text-xs sm:text-sm text-[#57534E] font-light leading-relaxed">
@@ -111,16 +101,16 @@ export const ShowcaseBanners: React.FC<ShowcaseBannersProps> = ({
 
           <div className="pt-8 mt-6 border-t border-[#E2DDD0] flex items-center justify-between">
             <span className="text-[11px] text-[#C5A059] font-semibold uppercase tracking-wider">
-              No Obligation Design Estimate
+              Castle Hill Atelier
             </span>
 
-            <button
-              onClick={onOpenBespoke}
+            <a
+              href="tel:+61296591110"
               className="bg-[#1C1917] hover:bg-[#C5A059] text-white px-5 py-2.5 text-xs uppercase tracking-wider font-medium transition-colors flex items-center gap-2"
             >
-              <span>Consult Jeweller</span>
+              <span>Call Store</span>
               <ArrowRight className="w-3.5 h-3.5" />
-            </button>
+            </a>
           </div>
         </div>
 

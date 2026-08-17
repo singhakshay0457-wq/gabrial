@@ -15,11 +15,9 @@ import {
   Instagram
 } from 'lucide-react';
 
-interface StoreLocationProps {
-  onOpenBespoke: () => void;
-}
+interface StoreLocationProps {}
 
-export const StoreLocation: React.FC<StoreLocationProps> = ({ onOpenBespoke }) => {
+export const StoreLocation: React.FC<StoreLocationProps> = () => {
   const storeName = "Gabriel Jewellers - Jewellery Store Castle Hill";
   const address = "297 Old Northern Rd, Castle Hill NSW 2154, Australia";
   const phone = "+61 2 9659 1110";
@@ -78,7 +76,7 @@ export const StoreLocation: React.FC<StoreLocationProps> = ({ onOpenBespoke }) =
             Visit Our Atelier in Castle Hill
           </h2>
           <p className="text-sm sm:text-base text-[#57534E] font-light leading-relaxed">
-            Experience our master handcrafted fine jewellery in person. Walk through our bespoke diamond gallery or consult directly with our gemologists at our Castle Hill boutique.
+            Experience our master handcrafted fine jewellery in person. Walk through our fine diamond gallery or consult directly with our gemologists at our Castle Hill boutique.
           </p>
         </div>
 
@@ -204,7 +202,7 @@ export const StoreLocation: React.FC<StoreLocationProps> = ({ onOpenBespoke }) =
                 Gabriel Jewellers
               </h3>
               <p className="text-xs text-[#57534E] font-light leading-relaxed">
-                Specialising in certified diamond solitaire engagement rings, custom wedding bands, luxury gemstone remodelling, and official valuations.
+                Specialising in certified diamond solitaire engagement rings, wedding bands, luxury gemstone remodelling, and official valuations.
               </p>
             </div>
 
@@ -283,14 +281,6 @@ export const StoreLocation: React.FC<StoreLocationProps> = ({ onOpenBespoke }) =
 
             {/* Action Buttons */}
             <div className="space-y-3 pt-2">
-              <button
-                onClick={onOpenBespoke}
-                className="w-full bg-[#1C1917] hover:bg-[#C5A059] text-white py-4 text-xs uppercase tracking-[0.25em] font-medium transition-colors flex items-center justify-center gap-2 shadow-md"
-              >
-                <Calendar className="w-4 h-4 text-[#C5A059]" />
-                <span>Book Private Castle Hill Appointment</span>
-              </button>
-
               <a
                 href={googleMapsUrl}
                 target="_blank"

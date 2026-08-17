@@ -10,8 +10,6 @@ export interface Product {
   subtitle?: string;
   category: CategoryType;
   collection: CollectionType;
-  price?: number;
-  mrp?: number;
   rating: number;
   reviewCount: number;
   images: string[];
@@ -50,7 +48,6 @@ export interface FilterOptions {
   metal: string; // 'All' or specific metal
   onlyBestSellers?: boolean;
   onlyNewArrivals?: boolean;
-  searchQuery?: string;
 }
 
 export type SortOption = 'featured' | 'rating' | 'newest';

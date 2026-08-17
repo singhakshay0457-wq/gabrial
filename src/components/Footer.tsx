@@ -5,32 +5,30 @@ import { Phone, Mail, MapPin, X, Instagram } from 'lucide-react';
 interface FooterProps {
   onSelectCategory: (category: CategoryType | 'All') => void;
   onScrollToSection: (sectionId: string) => void;
-  onOpenBespoke: () => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({
   onSelectCategory,
   onScrollToSection,
-  onOpenBespoke,
 }) => {
   const [activePolicyModal, setActivePolicyModal] = useState<string | null>(null);
 
   const policyContent: Record<string, { title: string; body: string }> = {
     'shipping': {
-      title: 'Shipping & Delivery Policy',
-      body: 'All Gabriel Jewellery orders are processed within 24–48 hours. Orders above ₹10,000 enjoy complimentary fully insured air express transit via specialized high-security logistics. Tracking code is provided immediately upon dispatch.'
+      title: 'Boutique Collection & Viewing',
+      body: 'All Gabriel fine jewellery designs are available for viewing and bespoke commissions at our Castle Hill flagship boutique. Each piece is accompanied by authentic certification cards and high-security presentation cases.'
     },
     'returns': {
-      title: 'Returns & Exchanges',
-      body: 'We offer a 15-day complimentary return & exchange window for unworn items in original Gabriel packaging with unbroken security seals. Custom bespoke pieces and engraved items are non-refundable.'
+      title: 'Complimentary Atelier Care & Assurance',
+      body: 'We provide complimentary ultrasonic cleaning, inspection, and ring sizing evaluations for all pieces handcrafted at our Castle Hill workshop.'
     },
     'privacy': {
       title: 'Privacy Policy',
-      body: 'Gabriel Jewellery protects patron data with banking-grade 256-bit encryption. We never sell or transfer your personal credentials, order history, or financial identifiers to third parties.'
+      body: 'Gabriel Jewellers protects patron data with high standard security. We never sell or transfer your personal credentials, contact inquiries, or design records to third parties.'
     },
     'terms': {
       title: 'Terms & Conditions',
-      body: 'All jewellery sold is hallmarked and accompanied by authentic certification cards. Prices are inclusive of GST. Images represent actual craftsmanship under professional atelier studio illumination.'
+      body: 'All jewellery showcased is hallmarked and accompanied by authentic certification cards. Images represent actual craftsmanship under professional atelier studio illumination.'
     }
   };
 

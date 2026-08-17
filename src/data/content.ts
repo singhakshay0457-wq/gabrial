@@ -15,7 +15,7 @@ export const TESTIMONIALS: Testimonial[] = [
     name: 'Vikram & Radhika Mehta',
     city: 'New Delhi',
     rating: 5,
-    comment: 'We sourced our entire bridal suite from Gabriel Jewellery. The bespoke service, IGI certification transparency, and timeless aesthetics are unmatched in India.',
+    comment: 'We sourced our entire bridal suite from Gabriel Jewellery. The personalized service, IGI certification transparency, and timeless aesthetics are unmatched.',
     purchasedItem: 'Bridal Suite Collection',
     date: 'June 2026'
   },

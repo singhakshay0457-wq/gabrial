@@ -7,8 +7,6 @@ export const PRODUCTS: Product[] = [
     subtitle: '18K Yellow Gold & 1.5 Ct VVS1 Solitaire Diamond',
     category: 'Rings',
     collection: 'Signature Collection',
-    price: 185000,
-    mrp: 210000,
     rating: 4.9,
     reviewCount: 38,
     images: [
@@ -42,8 +40,6 @@ export const PRODUCTS: Product[] = [
     subtitle: 'Colombian Emerald & Halo Diamonds in 18K Yellow Gold',
     category: 'Necklaces',
     collection: 'Statement Pieces',
-    price: 245000,
-    mrp: 270000,
     rating: 5.0,
     reviewCount: 24,
     images: [
@@ -78,8 +74,6 @@ export const PRODUCTS: Product[] = [
     subtitle: 'Full Eternity Platinum Band with Round Cut Diamonds',
     category: 'Rings',
     collection: 'Bridal Collection',
-    price: 135000,
-    mrp: 150000,
     rating: 4.8,
     reviewCount: 42,
     images: [
@@ -111,8 +105,6 @@ export const PRODUCTS: Product[] = [
     subtitle: 'Akoya Cultured Pearls & Marquise Diamonds in 18K Gold',
     category: 'Earrings',
     collection: 'Everyday Luxury',
-    price: 68000,
-    mrp: 78000,
     rating: 4.9,
     reviewCount: 19,
     images: [
@@ -143,8 +135,6 @@ export const PRODUCTS: Product[] = [
     subtitle: '3.5 Ct Diamond Tennis Bracelet in 18K White Gold',
     category: 'Bracelets',
     collection: 'Signature Collection',
-    price: 215000,
-    mrp: 240000,
     rating: 5.0,
     reviewCount: 56,
     images: [
@@ -176,8 +166,6 @@ export const PRODUCTS: Product[] = [
     subtitle: '1.0 Ct Ideal Cut Diamond on 18K Gold Chain',
     category: 'Necklaces',
     collection: 'Everyday Luxury',
-    price: 115000,
-    mrp: 128000,
     rating: 4.8,
     reviewCount: 31,
     images: [
@@ -207,8 +195,6 @@ export const PRODUCTS: Product[] = [
     subtitle: 'Solid 18K Yellow Gold Hand-Finished Cuff',
     category: 'Bracelets',
     collection: 'Everyday Luxury',
-    price: 95000,
-    mrp: 105000,
     rating: 4.7,
     reviewCount: 22,
     images: [
@@ -235,8 +221,6 @@ export const PRODUCTS: Product[] = [
     subtitle: 'Pavé Diamond Huggie Hoops in 18K Gold',
     category: 'Earrings',
     collection: 'Signature Collection',
-    price: 82000,
-    mrp: 92000,
     rating: 4.9,
     reviewCount: 47,
     images: [
@@ -264,8 +248,6 @@ export const PRODUCTS: Product[] = [
     subtitle: 'Ceylon Royal Blue Sapphire & Diamond Halo Ring',
     category: 'Rings',
     collection: 'Statement Pieces',
-    price: 260000,
-    mrp: 290000,
     rating: 5.0,
     reviewCount: 15,
     images: [
@@ -294,8 +276,6 @@ export const PRODUCTS: Product[] = [
     subtitle: 'Graduated Diamond Y-Necklace in Platinum',
     category: 'Necklaces',
     collection: 'Bridal Collection',
-    price: 380000,
-    mrp: 420000,
     rating: 5.0,
     reviewCount: 9,
     images: [

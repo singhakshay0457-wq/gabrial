@@ -11,9 +11,7 @@ import { Footer } from './components/Footer';
 // Modals & Drawers
 import { ProductDetailModal } from './components/ProductDetailModal';
 import { WishlistDrawer } from './components/WishlistDrawer';
-import { SearchModal } from './components/SearchModal';
 import { AccountModal } from './components/AccountModal';
-import { BespokeModal } from './components/BespokeModal';
 import { SizeGuideModal } from './components/SizeGuideModal';
 
 export default function App() {
@@ -33,9 +31,7 @@ export default function App() {
 
   // Modals visibility
   const [isWishlistOpen, setIsWishlistOpen] = useState(false);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isAccountOpen, setIsAccountOpen] = useState(false);
-  const [isBespokeOpen, setIsBespokeOpen] = useState(false);
   const [isSizeGuideOpen, setIsSizeGuideOpen] = useState(false);
   const [sizeGuideCategory, setSizeGuideCategory] = useState<string>('Rings');
 
@@ -76,9 +72,7 @@ export default function App() {
       <Navbar
         wishlistCount={wishlistIds.length}
         onOpenWishlist={() => setIsWishlistOpen(true)}
-        onOpenSearch={() => setIsSearchOpen(true)}
         onOpenAccount={() => setIsAccountOpen(true)}
-        onOpenBespoke={() => setIsBespokeOpen(true)}
         onSelectCategory={(cat) => {
           setActiveCategory(cat);
           setActiveCollection('All');
@@ -107,14 +101,10 @@ export default function App() {
         />
 
         {/* 8. Interactive Store Location & Google Map Section */}
-        <StoreLocation
-          onOpenBespoke={() => setIsBespokeOpen(true)}
-        />
+        <StoreLocation />
 
         {/* Custom Atelier Collage Gallery Showcase */}
-        <CustomCollageGallery
-          onOpenBespoke={() => setIsBespokeOpen(true)}
-        />
+        <CustomCollageGallery />
 
       </main>
 
@@ -125,7 +115,6 @@ export default function App() {
           setActiveCollection('All');
         }}
         onScrollToSection={scrollToSection}
-        onOpenBespoke={() => setIsBespokeOpen(true)}
       />
 
       {/* ------------ MODALS & DRAWERS ------------ */}
@@ -137,10 +126,6 @@ export default function App() {
         isOpen={Boolean(selectedProduct)}
         isInWishlist={selectedProduct ? wishlistIds.includes(selectedProduct.id) : false}
         onClose={() => setSelectedProduct(null)}
-        onOpenBespoke={() => {
-          setSelectedProduct(null);
-          setIsBespokeOpen(true);
-        }}
         onToggleWishlist={handleToggleWishlist}
         onOpenSizeGuide={(cat) => {
           setSizeGuideCategory(cat);
@@ -164,28 +149,10 @@ export default function App() {
         onSelectProduct={(p) => setSelectedProduct(p)}
       />
 
-      {/* Search Overlay Modal */}
-      <SearchModal
-        isOpen={isSearchOpen}
-        onClose={() => setIsSearchOpen(false)}
-        products={PRODUCTS}
-        onSelectProduct={(p) => setSelectedProduct(p)}
-      />
-
       {/* Patron Suite / Consultations Modal */}
       <AccountModal
         isOpen={isAccountOpen}
         onClose={() => setIsAccountOpen(false)}
-        onOpenBespoke={() => {
-          setIsAccountOpen(false);
-          setIsBespokeOpen(true);
-        }}
-      />
-
-      {/* Bespoke Consultation & In-Store Visit Booking Modal */}
-      <BespokeModal
-        isOpen={isBespokeOpen}
-        onClose={() => setIsBespokeOpen(false)}
       />
 
       {/* Size Guide Modal */}

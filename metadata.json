@@ -1,6 +1,6 @@
 {
   "name": "Gabriel Jewellery",
-  "description": "Luxury showcase application for Gabriel Jewellers Castle Hill, featuring handcrafted fine jewellery, bespoke atelier consultations, and store directions at 297 Old Northern Rd, Castle Hill NSW 2154, Australia.",
+  "description": "Fine jewellery design showcase gallery for Gabriel Jewellers Castle Hill, featuring handcrafted designs, boutique location details, and store directions at 297 Old Northern Rd, Castle Hill NSW 2154, Australia.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

@@ -19,7 +19,6 @@ interface ProductDetailModalProps {
   isOpen: boolean;
   isInWishlist: boolean;
   onClose: () => void;
-  onOpenBespoke: () => void;
   onToggleWishlist: (product: Product) => void;
   onOpenSizeGuide: (category: string) => void;
   onSelectProduct: (product: Product) => void;
@@ -33,21 +32,20 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
   isOpen,
   isInWishlist,
   onClose,
-  onOpenBespoke,
   onToggleWishlist,
   onOpenSizeGuide,
   onSelectProduct,
   onQuickView,
   wishlistIds,
 }) => {
-  if (!isOpen || !product) return null;
-
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-  const [selectedMetal, setSelectedMetal] = useState<MetalType>(product.defaultMetal);
-  const [selectedSize, setSelectedSize] = useState<string>(
-    product.sizes && product.sizes.length > 0 ? product.sizes[1] || product.sizes[0] : ''
+  const [selectedMetal, setSelectedMetal] = useState<MetalType>(
+    product ? product.defaultMetal : '18K Yellow Gold'
   );
-  const [activeTab, setActiveTab] = useState<'desc' | 'specs' | 'location' | 'care'>('desc');
+  const [selectedSize, setSelectedSize] = useState<string>(
+    product?.sizes && product.sizes.length > 0 ? product.sizes[1] || product.sizes[0] : ''
+  );
+  const [activeTab, setActiveTab] = useState<'desc' | 'specs' | 'shipping' | 'care'>('desc');
 
   useEffect(() => {
     if (product) {
@@ -56,6 +54,8 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
       setSelectedSize(product.sizes && product.sizes.length > 0 ? product.sizes[1] || product.sizes[0] : '');
     }
   }, [product]);
+
+  if (!isOpen || !product) return null;
 
   const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
     'Gabriel Jewellers Jewellery Store Castle Hill 297 Old Northern Rd Castle Hill NSW 2154 Australia'
@@ -163,7 +163,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                   <span>Gabriel Atelier Certified Design</span>
                 </div>
                 <p className="text-xs text-[#57534E] leading-relaxed">
-                  Every Gabriel piece is custom crafted with ethically sourced solid gold, precision-set natural diamonds, and official hallmarks at our Castle Hill workshop.
+                  Every Gabriel piece is handcrafted with ethically sourced solid gold, precision-set natural diamonds, and official hallmarks at our Castle Hill workshop.
                 </p>
               </div>
 
@@ -223,26 +223,15 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
 
               {/* Showcase Action CTAs */}
               <div className="space-y-3 pt-2">
-                <button
-                  onClick={() => {
-                    onClose();
-                    onOpenBespoke();
-                  }}
-                  className="w-full bg-[#1C1917] hover:bg-[#C5A059] text-white py-4 text-xs uppercase tracking-[0.25em] font-medium transition-colors duration-300 flex items-center justify-center gap-2 shadow-md"
-                >
-                  <Calendar className="w-4 h-4 text-[#C5A059]" />
-                  <span>Book Private Consultation at Castle Hill</span>
-                </button>
-
                 <a
                   href={googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full bg-[#FAF9F5] border border-[#C5A059]/60 hover:bg-[#F3F0E6] text-[#1C1917] py-3 text-xs uppercase tracking-[0.2em] font-medium transition-colors flex items-center justify-center gap-2"
+                  className="w-full bg-[#1C1917] hover:bg-[#C5A059] text-white py-4 text-xs uppercase tracking-[0.25em] font-medium transition-colors duration-300 flex items-center justify-center gap-2 shadow-md"
                 >
                   <MapPin className="w-4 h-4 text-[#C5A059]" />
                   <span>Locate Store on Google Maps</span>
-                  <ExternalLink className="w-3.5 h-3.5 text-[#57534E]" />
+                  <ExternalLink className="w-3.5 h-3.5 text-white/80" />
                 </a>
               </div>
 
@@ -285,7 +274,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                   activeTab === 'shipping' ? 'border-[#C5A059] text-[#C5A059]' : 'border-transparent text-[#57534E] hover:text-[#1C1917]'
                 }`}
               >
-                Shipping & Returns
+                Atelier & Authenticity
               </button>
               <button
                 onClick={() => setActiveTab('care')}
@@ -315,9 +304,9 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
 
               {activeTab === 'shipping' && (
                 <div className="space-y-2">
-                  <p><strong className="text-[#1C1917]">Complimentary Express Transit:</strong> Ships within 24-48 hours via insured air freight across India.</p>
-                  <p><strong className="text-[#1C1917]">Discreet Security Packaging:</strong> Items arrive in a tamper-evident outer box containing Gabriel’s velvet gift box.</p>
-                  <p><strong className="text-[#1C1917]">15-Day Returns:</strong> Full money-back guarantee for unworn items in original condition.</p>
+                  <p><strong className="text-[#1C1917]">Castle Hill Atelier Craft:</strong> Every piece is individually handcrafted and hallmarked at our Castle Hill boutique workshop.</p>
+                  <p><strong className="text-[#1C1917]">Certified Authenticity:</strong> Accompanied by authentic gemological dossiers and certification cards.</p>
+                  <p><strong className="text-[#1C1917]">Complimentary In-Store Care:</strong> Lifetime complimentary ultrasonic cleaning and claw inspection at our boutique.</p>
                 </div>
               )}
 

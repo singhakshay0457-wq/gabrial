@@ -80,7 +80,7 @@ export const BestSellers: React.FC<BestSellersProps> = ({
           <p className="text-sm text-[#57534E] font-light">
             {activeCategory !== 'All' || activeCollection !== 'All'
               ? `Showing design showcase for ${activeCategory !== 'All' ? activeCategory : ''} ${activeCollection !== 'All' ? activeCollection : ''}`
-              : 'Explore iconic bespoke ring designs, necklaces, earrings and bracelets crafted for our Castle Hill boutique.'}
+              : 'Explore iconic ring designs, necklaces, earrings and bracelets crafted for our Castle Hill boutique.'}
           </p>
         </div>
 
@@ -114,7 +114,7 @@ export const BestSellers: React.FC<BestSellersProps> = ({
             </button>
 
             <span className="text-xs text-[#57534E] font-light">
-              Showing <span className="font-semibold text-[#1C1917]">{filtered.length}</span> bespoke design{filtered.length === 1 ? '' : 's'}
+              Showing <span className="font-semibold text-[#1C1917]">{filtered.length}</span> fine design{filtered.length === 1 ? '' : 's'}
             </span>
           </div>
 

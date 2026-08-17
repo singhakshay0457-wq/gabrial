@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Search, User, Heart, MapPin, Menu, X, Sparkles, Navigation } from 'lucide-react';
+import { MapPin, Menu, X, Sparkles, Navigation } from 'lucide-react';
 import { CategoryType, CollectionType } from '../types';
 
 interface NavbarProps {
   wishlistCount: number;
   onOpenWishlist: () => void;
-  onOpenSearch: () => void;
   onOpenAccount: () => void;
-  onOpenBespoke: () => void;
   onSelectCategory: (category: CategoryType | 'All') => void;
   onSelectCollection: (collection: CollectionType | 'All') => void;
   onScrollToSection: (sectionId: string) => void;
@@ -17,9 +15,7 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({
   wishlistCount,
   onOpenWishlist,
-  onOpenSearch,
   onOpenAccount,
-  onOpenBespoke,
   onSelectCategory,
   onSelectCollection,
   onScrollToSection,
@@ -42,7 +38,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   const navCategories: { label: string; category?: CategoryType; collection?: CollectionType; sectionId?: string }[] = [
     { label: 'Castle Hill Store & Map', sectionId: 'store-location-section' },
-    { label: 'Custom Creations', sectionId: 'custom-creations-section' },
+    { label: 'Atelier Showcase', sectionId: 'gallery-showcase-section' },
   ];
 
   const handleNavClick = (item: typeof navCategories[0]) => {
@@ -69,13 +65,6 @@ export const Navbar: React.FC<NavbarProps> = ({
               aria-label="Open Navigation Menu"
             >
               <Menu className="w-6 h-6" />
-            </button>
-            <button 
-              onClick={onOpenSearch} 
-              className="p-2 text-[#1C1917] hover:text-[#C5A059] transition-colors ml-1 focus:outline-none"
-              aria-label="Search"
-            >
-              <Search className="w-5 h-5" />
             </button>
           </div>
 
@@ -121,52 +110,12 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Right Action Icons */}
           <div className="flex items-center space-x-2 sm:space-x-4">
             <button
-              onClick={onOpenBespoke}
-              className="hidden xl:flex items-center gap-1.5 text-xs tracking-wider uppercase font-medium text-[#C5A059] border border-[#C5A059]/40 hover:bg-[#C5A059] hover:text-white px-3 py-1.5 rounded-none transition-all duration-300"
-            >
-              <Sparkles className="w-3 h-3" />
-              <span>Bespoke</span>
-            </button>
-
-            <button
               onClick={() => onScrollToSection('store-location-section')}
               className="flex items-center gap-1 text-xs uppercase tracking-wider text-[#1C1917] hover:text-[#C5A059] px-2.5 py-1.5 border border-[#E2DDD0] hover:border-[#C5A059] bg-[#F3F0E6] transition-colors"
               title="Gabriel Jewellers Castle Hill Location"
             >
               <MapPin className="w-4 h-4 text-[#C5A059]" />
               <span className="hidden md:inline font-semibold text-[11px]">Castle Hill Map</span>
-            </button>
-
-            <button
-              onClick={onOpenSearch}
-              className="hidden lg:flex p-2 text-[#1C1917] hover:text-[#C5A059] transition-colors focus:outline-none"
-              title="Search"
-              aria-label="Search"
-            >
-              <Search className="w-5 h-5" />
-            </button>
-
-            <button
-              onClick={onOpenAccount}
-              className="p-2 text-[#1C1917] hover:text-[#C5A059] transition-colors focus:outline-none"
-              title="Patron Suite"
-              aria-label="Patron Suite"
-            >
-              <User className="w-5 h-5" />
-            </button>
-
-            <button
-              onClick={onOpenWishlist}
-              className="p-2 text-[#1C1917] hover:text-[#C5A059] transition-colors relative focus:outline-none"
-              title="Saved Pieces"
-              aria-label="Saved Pieces"
-            >
-              <Heart className="w-5 h-5" />
-              {wishlistCount > 0 && (
-                <span className="absolute top-1 right-1 bg-[#C5A059] text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center border border-white">
-                  {wishlistCount}
-                </span>
-              )}
             </button>
           </div>
 
@@ -209,17 +158,6 @@ export const Navbar: React.FC<NavbarProps> = ({
                     {item.label}
                   </button>
                 ))}
-                
-                <button
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    onOpenBespoke();
-                  }}
-                  className="w-full mt-4 flex items-center justify-center gap-2 bg-[#1C1917] text-[#FAF9F5] py-3 text-xs uppercase tracking-widest font-semibold hover:bg-[#C5A059] transition-colors"
-                >
-                  <Sparkles className="w-4 h-4 text-[#C5A059]" />
-                  <span>Book Bespoke Appointment</span>
-                </button>
               </div>
             </div>
 

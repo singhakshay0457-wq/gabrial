@@ -2,11 +2,9 @@ import React, { useState } from 'react';
 import { ATELIER_CUSTOM_DESIGNS, CustomDesignItem } from '../data/bespokeDesigns';
 import { Sparkles, Hammer, ShieldCheck, ArrowRight, ZoomIn, X, Phone, Calendar } from 'lucide-react';
 
-interface CustomCollageGalleryProps {
-  onOpenBespoke: () => void;
-}
+interface CustomCollageGalleryProps {}
 
-export const CustomCollageGallery: React.FC<CustomCollageGalleryProps> = ({ onOpenBespoke }) => {
+export const CustomCollageGallery: React.FC<CustomCollageGalleryProps> = () => {
   const [selectedPiece, setSelectedPiece] = useState<CustomDesignItem | null>(null);
 
   // High-res visual assets matching user's custom bespoke creations
@@ -19,7 +17,7 @@ export const CustomCollageGallery: React.FC<CustomCollageGalleryProps> = ({ onOp
   };
 
   return (
-    <section id="custom-creations-section" className="py-20 bg-[#181614] text-[#FAF9F5] relative overflow-hidden border-t border-[#332F2A]">
+    <section id="gallery-showcase-section" className="py-20 bg-[#181614] text-[#FAF9F5] relative overflow-hidden border-t border-[#332F2A]">
       {/* Background Decorative Accents */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
@@ -29,11 +27,11 @@ export const CustomCollageGallery: React.FC<CustomCollageGalleryProps> = ({ onOp
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal leading-tight text-[#FAF9F5]">
-            Custom Masterpieces & Workbench Creations
+            Masterpieces & Workbench Showcase
           </h2>
           <div className="w-16 h-[1px] bg-[#C5A059] mx-auto my-4" />
           <p className="text-sm text-[#D4CEBF] font-light leading-relaxed">
-            A collage showcase of custom engagement rings, high fine pendants, and intricate gemstone settings handcrafted at our Castle Hill workshop.
+            A collage showcase of fine engagement rings, high fine pendants, and intricate gemstone settings handcrafted at our Castle Hill workshop.
           </p>
         </div>
 
@@ -173,18 +171,18 @@ export const CustomCollageGallery: React.FC<CustomCollageGalleryProps> = ({ onOp
         {/* CTA Banner below collage */}
         <div className="mt-12 p-8 bg-[#211E1B] border border-[#C5A059]/40 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-1 text-center md:text-left">
-            <h3 className="font-serif text-2xl text-white">Have a Unique Custom Design in Mind?</h3>
+            <h3 className="font-serif text-2xl text-white">Have a Unique Fine Design in Mind?</h3>
             <p className="text-xs text-[#D4CEBF] font-light">
-              Bring your dream sketch, heirloom stone, or custom idea to our Castle Hill master jewellers.
+              Visit our Castle Hill boutique or speak with our master jewellers today.
             </p>
           </div>
-          <button
-            onClick={onOpenBespoke}
+          <a
+            href="tel:+61296591110"
             className="px-8 py-3.5 bg-[#C5A059] text-white hover:bg-[#B08C46] transition-colors text-xs uppercase tracking-[0.2em] font-medium shrink-0 flex items-center gap-2"
           >
-            <span>Consult Castle Hill Jeweller</span>
-            <ArrowRight className="w-4 h-4" />
-          </button>
+            <Phone className="w-4 h-4" />
+            <span>Call +61 2 9659 1110</span>
+          </a>
         </div>
 
       </div>
@@ -238,23 +236,19 @@ export const CustomCollageGallery: React.FC<CustomCollageGalleryProps> = ({ onOp
             </div>
 
             <div className="flex flex-col sm:flex-row items-center gap-3">
-              <button
-                onClick={() => {
-                  setSelectedPiece(null);
-                  onOpenBespoke();
-                }}
-                className="w-full sm:w-auto flex-1 bg-[#C5A059] text-white py-3 px-6 text-xs uppercase tracking-widest font-medium hover:bg-[#B08C46] transition-colors flex items-center justify-center gap-2"
-              >
-                <Calendar className="w-4 h-4" />
-                <span>Book Bespoke Consultation</span>
-              </button>
               <a
                 href="tel:+61296591110"
-                className="w-full sm:w-auto bg-transparent border border-[#C5A059]/60 text-[#E8D3A7] py-3 px-6 text-xs uppercase tracking-widest font-medium hover:bg-[#C5A059]/10 transition-colors flex items-center justify-center gap-2"
+                className="w-full sm:w-auto flex-1 bg-[#C5A059] text-white py-3 px-6 text-xs uppercase tracking-widest font-medium hover:bg-[#B08C46] transition-colors flex items-center justify-center gap-2"
               >
                 <Phone className="w-4 h-4" />
-                <span>+61 2 9659 1110</span>
+                <span>Call Atelier: +61 2 9659 1110</span>
               </a>
+              <button
+                onClick={() => setSelectedPiece(null)}
+                className="w-full sm:w-auto bg-transparent border border-[#C5A059]/60 text-[#E8D3A7] py-3 px-6 text-xs uppercase tracking-widest font-medium hover:bg-[#C5A059]/10 transition-colors"
+              >
+                Close
+              </button>
             </div>
 
           </div>
