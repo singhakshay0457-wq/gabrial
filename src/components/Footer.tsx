@@ -37,7 +37,7 @@ export const Footer: React.FC<FooterProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Top Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 pb-12 border-b border-[#2C2825]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 pb-12 border-b border-[#2C2825]">
           
           {/* Brand Col */}
           <div className="space-y-4">
@@ -58,30 +58,6 @@ export const Footer: React.FC<FooterProps> = ({
               <Instagram className="w-4 h-4 text-[#C5A059]" />
               <span>Follow @thegabrieljewellers</span>
             </a>
-          </div>
-
-          {/* Customer Support */}
-          <div>
-            <h4 className="font-serif text-lg font-normal text-[#FAF9F5] mb-4">
-              Customer Support
-            </h4>
-            <ul className="space-y-2.5 text-xs text-[#D4CEBF] font-light">
-              <li>
-                <button onClick={() => onScrollToSection('brand-story-section')} className="hover:text-[#C5A059] transition-colors">
-                  About Us & Story
-                </button>
-              </li>
-              <li>
-                <button onClick={() => setActivePolicyModal('privacy')} className="hover:text-[#C5A059] transition-colors">
-                  Privacy Policy
-                </button>
-              </li>
-              <li>
-                <button onClick={() => setActivePolicyModal('terms')} className="hover:text-[#C5A059] transition-colors">
-                  Terms & Conditions
-                </button>
-              </li>
-            </ul>
           </div>
 
           {/* Contact & Concierge */}

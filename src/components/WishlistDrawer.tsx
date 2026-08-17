@@ -1,6 +1,6 @@
 import React from 'react';
 import { Product } from '../types';
-import { X, Heart, ShoppingBag, Trash2 } from 'lucide-react';
+import { X, Heart, Trash2 } from 'lucide-react';
 
 interface WishlistDrawerProps {
   isOpen: boolean;
@@ -49,13 +49,13 @@ export const WishlistDrawer: React.FC<WishlistDrawerProps> = ({
           {wishlistProducts.length === 0 ? (
             <div className="text-center py-16 space-y-4">
               <Heart className="w-12 h-12 text-[#C5A059]/30 mx-auto" />
-              <p className="font-serif text-2xl text-[#1C1917]">Your wishlist is empty.</p>
-              <p className="text-xs text-[#57534E]">Save your favorite fine jewellery pieces to revisit or share.</p>
+              <p className="font-serif text-2xl text-[#1C1917]">Your saved gallery is empty.</p>
+              <p className="text-xs text-[#57534E]">Save your favorite fine jewellery designs to revisit.</p>
               <button
                 onClick={onClose}
                 className="bg-[#1C1917] text-[#FAF9F5] px-6 py-3 text-xs uppercase tracking-widest hover:bg-[#C5A059] transition-colors"
               >
-                Browse Atelier
+                Browse Gallery
               </button>
             </div>
           ) : (
@@ -87,20 +87,20 @@ export const WishlistDrawer: React.FC<WishlistDrawerProps> = ({
                       <button
                         onClick={() => onRemoveFromWishlist(product)}
                         className="text-[#A8A29E] hover:text-red-700 transition-colors"
-                        title="Remove from Wishlist"
+                        title="Remove from Saved"
                       >
                         <Trash2 className="w-4 h-4" />
                       </button>
                     </div>
 
                     <p className="text-[11px] text-[#C5A059] uppercase tracking-wider font-medium">
-                      {product.category} • {product.defaultMetal}
+                      {product.category} • {product.collection}
                     </p>
                   </div>
 
                   <div className="flex items-center justify-between mt-3 pt-2 border-t border-[#E2DDD0]">
                     <span className="text-[10px] uppercase tracking-wider text-[#57534E]">
-                      {product.specifications.metalPurity}
+                      Castle Hill Atelier
                     </span>
 
                     <button

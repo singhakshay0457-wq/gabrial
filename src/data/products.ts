@@ -4,7 +4,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 'gabriel-001',
     name: 'The Celestia Solitaire Diamond Ring',
-    subtitle: '18K Yellow Gold & 1.5 Ct VVS1 Solitaire Diamond',
+    subtitle: 'Classic Solitaire Statement Ring',
     category: 'Rings',
     collection: 'Signature Collection',
     rating: 4.9,
@@ -16,28 +16,18 @@ export const PRODUCTS: Product[] = [
     ],
     isBestSeller: true,
     isFeatured: true,
-    metalOptions: ['18K Yellow Gold', '18K White Gold', '18K Rose Gold', 'Platinum'],
-    defaultMetal: '18K Yellow Gold',
-    sizes: ['5', '6', '7', '8', '9', '10'],
-    description: 'The Celestia Solitaire Ring embodies pure celestial brilliance. Featuring a hand-selected 1.5-carat round brilliant cut solitaire diamond set on a polished 18K solid gold band, this ring is designed to catch light from every angle with breathtaking radiance.',
-    specifications: {
-      metalPurity: '18K Solid Gold (750 Hallmark)',
-      diamondCarat: '1.50 Ct Natural Diamond',
-      diamondClarity: 'VVS1 Clarity, E Color Excellent Cut',
-      weightGrams: '4.8g',
-      certification: 'SGL & IGI Individually Certified'
-    },
+    description: 'The Celestia Solitaire Ring embodies celestial brilliance. Featuring a hand-selected solitaire diamond set on a polished contoured band, this iconic piece is designed to catch light from every angle with breathtaking radiance.',
     inStock: true,
     jewelleryCare: [
-      'Store in your complimentary velvet Gabriel box away from direct light.',
-      'Avoid contact with perfumes, hairsprays, and harsh household chemicals.',
-      'Clean gently with a soft microfiber cloth or mild warm soap solution.'
+      'Store in your complimentary velvet Gabriel presentation box away from direct light.',
+      'Avoid contact with perfumes, cosmetics, and harsh household chemicals.',
+      'Clean gently with a soft microfiber cloth or mild warm water.'
     ]
   },
   {
     id: 'gabriel-002',
     name: 'The Sovereign Emerald Pendant Necklace',
-    subtitle: 'Colombian Emerald & Halo Diamonds in 18K Yellow Gold',
+    subtitle: 'Vibrant Emerald Pendant with Halo Accent',
     category: 'Necklaces',
     collection: 'Statement Pieces',
     rating: 5.0,
@@ -49,29 +39,18 @@ export const PRODUCTS: Product[] = [
     isBestSeller: true,
     isNewArrival: true,
     isFeatured: true,
-    metalOptions: ['18K Yellow Gold', '18K White Gold', 'Platinum'],
-    defaultMetal: '18K Yellow Gold',
-    sizes: ['16 inches', '18 inches', '20 inches'],
-    description: 'An heirloom piece of unmatched majesty. A vibrant 2.2-carat cushion-cut natural Colombian emerald surrounded by a sparkling halo of micro-pavé diamonds suspended on a delicate yet durable gold chain.',
-    specifications: {
-      metalPurity: '18K Yellow Gold',
-      gemstone: '2.20 Ct Natural Emerald',
-      diamondCarat: '0.45 Ct Total Diamond Weight',
-      diamondClarity: 'VS Clarity, F-G Color',
-      weightGrams: '8.2g',
-      certification: 'GIA Gemological Report Included'
-    },
+    description: 'An heirloom piece of unmatched majesty. A vibrant cushion-cut natural emerald surrounded by an exquisite halo of shimmering diamonds suspended on a delicate yet durable chain.',
     inStock: true,
     jewelleryCare: [
       'Emeralds require gentle care. Clean with a damp lukewarm cloth only.',
       'Do not use ultrasonic cleaners or alcohol-based solvents.',
-      'Keep isolated from other jewellery to prevent surface scratches.'
+      'Keep isolated from other jewellery to prevent surface abrasions.'
     ]
   },
   {
     id: 'gabriel-003',
     name: 'The Royal Eternity Diamond Band',
-    subtitle: 'Full Eternity Platinum Band with Round Cut Diamonds',
+    subtitle: 'Continuous Full Eternity Silhouette Band',
     category: 'Rings',
     collection: 'Bridal Collection',
     rating: 4.8,
@@ -82,27 +61,17 @@ export const PRODUCTS: Product[] = [
     ],
     isBestSeller: true,
     isFeatured: true,
-    metalOptions: ['Platinum', '18K White Gold', '18K Yellow Gold', '18K Rose Gold'],
-    defaultMetal: 'Platinum',
-    sizes: ['5', '6', '7', '8', '9'],
-    description: 'Symbolizing everlasting commitment, the Royal Eternity Band features a continuous circle of brilliant round diamonds seamlessly set in pure 950 Platinum for an opulent shine.',
-    specifications: {
-      metalPurity: '950 Platinum',
-      diamondCarat: '2.00 Ct Total Diamond Weight',
-      diamondClarity: 'VVS2 Clarity, F Color',
-      weightGrams: '5.6g',
-      certification: 'SGL Certified'
-    },
+    description: 'Symbolizing everlasting commitment, the Royal Eternity Band features a continuous circle of brilliant diamonds seamlessly set for an opulent and timeless shine.',
     inStock: true,
     jewelleryCare: [
       'Wipe down after wearing with a lint-free jewellery cloth.',
-      'Check prong settings annually at any Gabriel atelier.'
+      'Check claw settings annually with our Castle Hill boutique jeweller.'
     ]
   },
   {
     id: 'gabriel-004',
     name: 'The Pearl Cascade Drop Earrings',
-    subtitle: 'Akoya Cultured Pearls & Marquise Diamonds in 18K Gold',
+    subtitle: 'Akoya Cultured Pearl Drop Silhouette',
     category: 'Earrings',
     collection: 'Everyday Luxury',
     rating: 4.9,
@@ -113,26 +82,17 @@ export const PRODUCTS: Product[] = [
     ],
     isNewArrival: true,
     isFeatured: true,
-    metalOptions: ['18K Yellow Gold', '18K Rose Gold', '18K White Gold'],
-    defaultMetal: '18K Yellow Gold',
-    description: 'Combining timeless luster with contemporary silhouette, these drop earrings feature hand-selected AAA Akoya cultured pearls gracefully suspended from marquise-cut diamond studs.',
-    specifications: {
-      metalPurity: '18K Solid Gold',
-      gemstone: '8.5mm AAA Grade Akoya Pearl',
-      diamondCarat: '0.30 Ct Total Diamond Weight',
-      weightGrams: '4.1g',
-      certification: 'Gabriel Authenticity Card'
-    },
+    description: 'Combining timeless luster with a contemporary silhouette, these drop earrings feature hand-selected AAA cultured pearls gracefully suspended from refined diamond accents.',
     inStock: true,
     jewelleryCare: [
-      'Pearls love skin oils! Wear them often.',
-      'Put pearls on last after makeup, perfume, and lotion.'
+      'Pearls love gentle wear. Put pearls on last after cosmetics and fragrance.',
+      'Wipe with a soft damp cloth and store flat.'
     ]
   },
   {
     id: 'gabriel-005',
     name: 'The Aurelia Tennis Diamond Bracelet',
-    subtitle: '3.5 Ct Diamond Tennis Bracelet in 18K White Gold',
+    subtitle: 'Classic Four-Prong Tennis Silhouette',
     category: 'Bracelets',
     collection: 'Signature Collection',
     rating: 5.0,
@@ -143,27 +103,17 @@ export const PRODUCTS: Product[] = [
     ],
     isBestSeller: true,
     isFeatured: true,
-    metalOptions: ['18K White Gold', '18K Yellow Gold', 'Platinum'],
-    defaultMetal: '18K White Gold',
-    sizes: ['6.5 inches', '7.0 inches', '7.5 inches'],
-    description: 'The quintessential luxury accessory. Each round brilliant diamond is four-prong set to maximize light return, offering fluid movement and security with a dual-locking safety clasp.',
-    specifications: {
-      metalPurity: '18K White Gold',
-      diamondCarat: '3.50 Ct Total Diamond Weight',
-      diamondClarity: 'VS1 Clarity, F Color',
-      weightGrams: '11.4g',
-      certification: 'IGI Diamond Certificate'
-    },
+    description: 'The quintessential luxury accessory. Each round brilliant diamond is individually set to maximize light return, offering fluid movement and security with a dual-locking safety clasp.',
     inStock: true,
     jewelleryCare: [
       'Ensure safety latch is clicked closed before wearing.',
-      'Store flat in original velvet box.'
+      'Store flat in original Gabriel presentation case.'
     ]
   },
   {
     id: 'gabriel-006',
     name: 'The Luminary Solitaire Diamond Pendant',
-    subtitle: '1.0 Ct Ideal Cut Diamond on 18K Gold Chain',
+    subtitle: 'Solitaire Floating Pendant Design',
     category: 'Necklaces',
     collection: 'Everyday Luxury',
     rating: 4.8,
@@ -175,24 +125,14 @@ export const PRODUCTS: Product[] = [
     isBestSeller: false,
     isNewArrival: true,
     isFeatured: false,
-    metalOptions: ['18K Yellow Gold', '18K Rose Gold', '18K White Gold', 'Platinum'],
-    defaultMetal: '18K Yellow Gold',
-    sizes: ['16 inches', '18 inches'],
-    description: 'Minimalist sophistication at its finest. A floating 1.0-carat solitaire diamond held in a bezel setting, resting gracefully at the collarbone.',
-    specifications: {
-      metalPurity: '18K Solid Gold',
-      diamondCarat: '1.00 Ct Round Brilliant Diamond',
-      diamondClarity: 'VVS2 Clarity, E Color',
-      weightGrams: '3.9g',
-      certification: 'SGL Diamond Certificate'
-    },
+    description: 'Minimalist sophistication at its finest. A floating solitaire diamond held in a modern bezel setting, resting gracefully at the collarbone.',
     inStock: true,
-    jewelleryCare: ['Clean with soft cloth provided.', 'Keep chain untangled when stored.']
+    jewelleryCare: ['Clean with soft cloth provided.', 'Keep chain untangled when stored in pouch.']
   },
   {
     id: 'gabriel-007',
     name: 'The Golden Sculpted Bangle',
-    subtitle: 'Solid 18K Yellow Gold Hand-Finished Cuff',
+    subtitle: 'Hand-Sculpted Contoured Cuff',
     category: 'Bracelets',
     collection: 'Everyday Luxury',
     rating: 4.7,
@@ -203,22 +143,14 @@ export const PRODUCTS: Product[] = [
     ],
     isNewArrival: false,
     isFeatured: false,
-    metalOptions: ['18K Yellow Gold', '18K Rose Gold'],
-    defaultMetal: '18K Yellow Gold',
-    sizes: ['Small (2.2)', 'Medium (2.4)', 'Large (2.6)'],
-    description: 'A striking statement of minimalist form. Hand-sculpted in heavy 18K solid gold with a silky interior finish that contours comfortably against the wrist.',
-    specifications: {
-      metalPurity: '18K Solid Gold (750 BIS Hallmark)',
-      weightGrams: '16.8g',
-      certification: 'BIS Hallmarked'
-    },
+    description: 'A striking statement of sculptural form. Hand-shaped with a silky interior finish that contours comfortably against the wrist for effortless everyday wear.',
     inStock: true,
-    jewelleryCare: ['Polished gold develops a natural patina over time which adds character. Polish with microfiber cloth.']
+    jewelleryCare: ['Polish periodically with the provided microfiber polishing cloth to preserve lustrous shine.']
   },
   {
     id: 'gabriel-008',
     name: 'The Diamond Constellation Hoop Earrings',
-    subtitle: 'Pavé Diamond Huggie Hoops in 18K Gold',
+    subtitle: 'Pavé Huggie Hoops Silhouette',
     category: 'Earrings',
     collection: 'Signature Collection',
     rating: 4.9,
@@ -229,23 +161,14 @@ export const PRODUCTS: Product[] = [
     ],
     isBestSeller: true,
     isFeatured: false,
-    metalOptions: ['18K Yellow Gold', '18K White Gold', '18K Rose Gold'],
-    defaultMetal: '18K Yellow Gold',
-    description: 'Designed for effortless day-to-night glamour, these gold huggie hoops are encircled inside and out with brilliant pavé diamonds.',
-    specifications: {
-      metalPurity: '18K Gold',
-      diamondCarat: '0.85 Ct Total Diamond Weight',
-      diamondClarity: 'VS Clarity, F-G Color',
-      weightGrams: '5.2g',
-      certification: 'Gabriel Guarantee Certificate'
-    },
+    description: 'Designed for effortless day-to-night glamour, these refined huggie hoops are encircled inside and out with brilliant pavé diamonds.',
     inStock: true,
-    jewelleryCare: ['Snap mechanism tested for secure fit.', 'Clean with soft brush and soapy water.']
+    jewelleryCare: ['Snap mechanism tested for secure fit.', 'Clean with soft brush and warm water.']
   },
   {
     id: 'gabriel-009',
     name: 'The Majestic Sapphire & Diamond Ring',
-    subtitle: 'Ceylon Royal Blue Sapphire & Diamond Halo Ring',
+    subtitle: 'Royal Blue Sapphire & Diamond Halo Design',
     category: 'Rings',
     collection: 'Statement Pieces',
     rating: 5.0,
@@ -256,24 +179,14 @@ export const PRODUCTS: Product[] = [
     ],
     isNewArrival: true,
     isFeatured: false,
-    metalOptions: ['18K White Gold', 'Platinum', '18K Yellow Gold'],
-    defaultMetal: '18K White Gold',
-    sizes: ['6', '7', '8', '9'],
-    description: 'Featuring a rare 3.1-carat unheated Royal Blue Ceylon sapphire framed by baguettes and round diamonds. A showstopping regal masterpiece.',
-    specifications: {
-      metalPurity: '18K White Gold',
-      gemstone: '3.10 Ct Natural Ceylon Sapphire',
-      diamondCarat: '0.75 Ct Diamonds',
-      weightGrams: '6.9g',
-      certification: 'GIA & SGL Gem Certificate'
-    },
+    description: 'Featuring a rare royal blue sapphire framed by baguettes and round brilliant diamonds. A showstopping regal masterpiece created for gala occasions.',
     inStock: true,
     jewelleryCare: ['Avoid extreme thermal shocks.', 'Store in protective Gabriel vault pouch.']
   },
   {
     id: 'gabriel-010',
     name: 'The Opulent Diamond Choker Necklace',
-    subtitle: 'Graduated Diamond Y-Necklace in Platinum',
+    subtitle: 'Graduated Diamond Y-Necklace Design',
     category: 'Necklaces',
     collection: 'Bridal Collection',
     rating: 5.0,
@@ -283,18 +196,8 @@ export const PRODUCTS: Product[] = [
       'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&q=80&w=1000'
     ],
     isFeatured: true,
-    metalOptions: ['Platinum', '18K White Gold'],
-    defaultMetal: 'Platinum',
-    sizes: ['15 inches', '16 inches'],
-    description: 'The pinnacle of high fine jewellery craftsmanship. Over 5 carats of hand-set, ethically sourced diamonds cascade down in an unforgettable silhouette designed for grand occasions.',
-    specifications: {
-      metalPurity: '950 Platinum',
-      diamondCarat: '5.20 Ct Total Diamond Weight',
-      diamondClarity: 'VVS1-VVS2 Clarity, E-F Color',
-      weightGrams: '24.5g',
-      certification: 'GIA Master Certificate Included'
-    },
+    description: 'The pinnacle of high fine jewellery artistry. Hand-set diamonds cascade down in an unforgettable silhouette designed for grand occasions.',
     inStock: true,
-    jewelleryCare: ['Includes complimentary annual white glove cleaning & inspection.']
+    jewelleryCare: ['Includes complimentary annual white glove inspection at our Castle Hill workshop.']
   }
 ];

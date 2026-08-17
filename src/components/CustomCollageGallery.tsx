@@ -57,7 +57,7 @@ export const CustomCollageGallery: React.FC<CustomCollageGalleryProps> = () => {
                   {ATELIER_CUSTOM_DESIGNS[0].tag}
                 </span>
                 <span className="text-xs text-[#E8D3A7] flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <ZoomIn className="w-3.5 h-3.5" /> View Specs
+                  <ZoomIn className="w-3.5 h-3.5" /> View Design
                 </span>
               </div>
               <h3 className="font-serif text-2xl sm:text-3xl text-white font-normal group-hover:text-[#E8D3A7] transition-colors">
@@ -220,20 +220,6 @@ export const CustomCollageGallery: React.FC<CustomCollageGalleryProps> = () => {
             <p className="text-xs text-[#A8A29E] font-light leading-relaxed mb-6 italic border-l-2 border-[#C5A059] pl-3">
               "{selectedPiece.details}"
             </p>
-
-            <div className="bg-[#26221F] p-4 border border-[#3A3530] mb-6">
-              <h4 className="text-xs uppercase tracking-wider text-[#E8D3A7] font-semibold mb-2">
-                Atelier Specifications
-              </h4>
-              <ul className="space-y-1.5 text-xs text-[#D4CEBF]">
-                {selectedPiece.specifications.map((spec, idx) => (
-                  <li key={idx} className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#C5A059]" />
-                    <span>{spec}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
 
             <div className="flex flex-col sm:flex-row items-center gap-3">
               <a

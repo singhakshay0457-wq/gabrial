@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Product, MetalType } from '../types';
+import { Product } from '../types';
 import { ProductCard } from './ProductCard';
 import {
   X,
@@ -7,8 +7,6 @@ import {
   Star,
   Sparkles,
   ShieldCheck,
-  Ruler,
-  Calendar,
   MapPin,
   ExternalLink
 } from 'lucide-react';
@@ -33,25 +31,16 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
   isInWishlist,
   onClose,
   onToggleWishlist,
-  onOpenSizeGuide,
   onSelectProduct,
   onQuickView,
   wishlistIds,
 }) => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-  const [selectedMetal, setSelectedMetal] = useState<MetalType>(
-    product ? product.defaultMetal : '18K Yellow Gold'
-  );
-  const [selectedSize, setSelectedSize] = useState<string>(
-    product?.sizes && product.sizes.length > 0 ? product.sizes[1] || product.sizes[0] : ''
-  );
-  const [activeTab, setActiveTab] = useState<'desc' | 'specs' | 'shipping' | 'care'>('desc');
+  const [activeTab, setActiveTab] = useState<'desc' | 'shipping' | 'care'>('desc');
 
   useEffect(() => {
     if (product) {
       setSelectedImageIndex(0);
-      setSelectedMetal(product.defaultMetal);
-      setSelectedSize(product.sizes && product.sizes.length > 0 ? product.sizes[1] || product.sizes[0] : '');
     }
   }, [product]);
 
@@ -74,7 +63,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
         <div className="p-4 sm:px-8 border-b border-[#E8E5DA] flex items-center justify-between bg-[#F3F0E6]/80">
           <div className="flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-[#C5A059] font-medium">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Gabriel High Fine Jewellery Atelier</span>
+            <span>Gabriel Fine Jewellery Design Showcase</span>
           </div>
           <button
             onClick={onClose}
@@ -85,7 +74,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
         </div>
 
         {/* Modal Scrollable Content */}
-        <div className="p-6 sm:p-8 overflow-y-auto space-y-12">
+        <div className="p-6 sm:p-8 overflow-y-auto space-y-10">
           
           {/* Main Product PDP Layout */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
@@ -132,7 +121,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
             </div>
 
             {/* Right Information & Options Panel */}
-            <div className="lg:col-span-5 space-y-6">
+            <div className="lg:col-span-5 space-y-6 flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between text-xs text-[#C5A059] uppercase tracking-widest font-semibold mb-1">
                   <span>{product.collection}</span>
@@ -143,6 +132,12 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                   {product.name}
                 </h1>
 
+                {product.subtitle && (
+                  <p className="text-sm text-[#8C827A] mb-3 font-light">
+                    {product.subtitle}
+                  </p>
+                )}
+
                 {/* Rating & Certified */}
                 <div className="flex items-center gap-3 text-xs text-[#57534E] pb-4 border-b border-[#E8E5DA]">
                   <div className="flex items-center text-[#C5A059]">
@@ -152,74 +147,22 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                   <span>•</span>
                   <span>{product.reviewCount} Patron Reviews</span>
                   <span>•</span>
-                  <span className="text-[#C5A059] font-medium">{product.specifications.certification || 'SGL Certified'}</span>
+                  <span className="text-[#C5A059] font-medium flex items-center gap-1">
+                    <ShieldCheck className="w-3.5 h-3.5" /> Handcrafted Design
+                  </span>
                 </div>
               </div>
 
-              {/* Atelier Specifications Header */}
-              <div className="space-y-2 pt-2 border-t border-[#E8E5DA]">
-                <div className="flex items-center gap-2 text-xs uppercase tracking-wider text-[#C5A059] font-medium">
-                  <ShieldCheck className="w-4 h-4 text-[#C5A059]" />
-                  <span>Gabriel Atelier Certified Design</span>
+              {/* Design narrative box */}
+              <div className="space-y-3 p-4 bg-[#F3F0E6]/70 border border-[#E8E5DA]">
+                <div className="flex items-center gap-2 text-xs uppercase tracking-wider text-[#C5A059] font-semibold">
+                  <Sparkles className="w-4 h-4 text-[#C5A059]" />
+                  <span>Gabriel Atelier Showcase</span>
                 </div>
-                <p className="text-xs text-[#57534E] leading-relaxed">
-                  Every Gabriel piece is handcrafted with ethically sourced solid gold, precision-set natural diamonds, and official hallmarks at our Castle Hill workshop.
+                <p className="text-xs text-[#57534E] leading-relaxed font-light">
+                  This signature piece is individually handcrafted and available for private viewing and bespoke consultation at our Castle Hill flagship boutique.
                 </p>
               </div>
-
-              {/* Metal Selector */}
-              <div>
-                <label className="block text-xs uppercase tracking-wider text-[#1C1917] font-semibold mb-2">
-                  Precious Metal: <span className="text-[#C5A059] font-normal">{selectedMetal}</span>
-                </label>
-                <div className="grid grid-cols-2 gap-2">
-                  {product.metalOptions.map((metal) => (
-                    <button
-                      key={metal}
-                      onClick={() => setSelectedMetal(metal)}
-                      className={`p-2.5 text-xs text-center border transition-all ${
-                        selectedMetal === metal
-                          ? 'border-[#C5A059] bg-[#C5A059]/10 font-semibold text-[#1C1917]'
-                          : 'border-[#E2DDD0] bg-[#FAF9F5] text-[#57534E] hover:border-[#C5A059]'
-                      }`}
-                    >
-                      {metal}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Size Selector if applicable */}
-              {product.sizes && product.sizes.length > 0 && (
-                <div>
-                  <div className="flex items-center justify-between mb-2">
-                    <label className="text-xs uppercase tracking-wider text-[#1C1917] font-semibold">
-                      Size Selection
-                    </label>
-                    <button
-                      onClick={() => onOpenSizeGuide(product.category)}
-                      className="text-[11px] text-[#C5A059] hover:underline uppercase tracking-wider font-medium flex items-center gap-1"
-                    >
-                      <Ruler className="w-3.5 h-3.5" /> Size Guide
-                    </button>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {product.sizes.map((size) => (
-                      <button
-                        key={size}
-                        onClick={() => setSelectedSize(size)}
-                        className={`min-w-[40px] p-2 text-xs border transition-all ${
-                          selectedSize === size
-                            ? 'border-[#1C1917] bg-[#1C1917] text-[#FAF9F5] font-semibold'
-                            : 'border-[#E2DDD0] bg-[#FAF9F5] text-[#1C1917] hover:border-[#C5A059]'
-                        }`}
-                      >
-                        {size}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
 
               {/* Showcase Action CTAs */}
               <div className="space-y-3 pt-2">
@@ -236,7 +179,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
               </div>
 
               {/* Boutique info badge */}
-              <div className="pt-4 border-t border-[#E8E5DA] p-3 bg-[#F3F0E6] text-[11px] text-[#57534E] space-y-1">
+              <div className="pt-3 border-t border-[#E8E5DA] p-3 bg-[#F3F0E6] text-[11px] text-[#57534E] space-y-1">
                 <div className="flex items-center gap-1.5 font-semibold text-[#1C1917] uppercase tracking-wider">
                   <MapPin className="w-3.5 h-3.5 text-[#C5A059]" />
                   <span>Castle Hill Store Location</span>
@@ -249,7 +192,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
 
           </div>
 
-          {/* Collapsible Accordions for Specifications, Care & Shipping */}
+          {/* Collapsible Accordions for Description, Care & Atelier Craft */}
           <div className="pt-8 border-t border-[#E8E5DA]">
             <div className="flex border-b border-[#E2DDD0] overflow-x-auto">
               <button
@@ -258,15 +201,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                   activeTab === 'desc' ? 'border-[#C5A059] text-[#C5A059]' : 'border-transparent text-[#57534E] hover:text-[#1C1917]'
                 }`}
               >
-                Description
-              </button>
-              <button
-                onClick={() => setActiveTab('specs')}
-                className={`py-3 px-6 text-xs uppercase tracking-[0.18em] font-semibold border-b-2 transition-all whitespace-nowrap ${
-                  activeTab === 'specs' ? 'border-[#C5A059] text-[#C5A059]' : 'border-transparent text-[#57534E] hover:text-[#1C1917]'
-                }`}
-              >
-                Specifications
+                Design Narrative
               </button>
               <button
                 onClick={() => setActiveTab('shipping')}
@@ -291,22 +226,11 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 <p className="text-sm font-serif leading-relaxed text-[#1C1917]">{product.description}</p>
               )}
 
-              {activeTab === 'specs' && (
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <p><strong className="text-[#1C1917]">Metal Purity:</strong> {product.specifications.metalPurity}</p>
-                  {product.specifications.diamondCarat && <p><strong className="text-[#1C1917]">Diamond Carat:</strong> {product.specifications.diamondCarat}</p>}
-                  {product.specifications.diamondClarity && <p><strong className="text-[#1C1917]">Diamond Clarity:</strong> {product.specifications.diamondClarity}</p>}
-                  {product.specifications.gemstone && <p><strong className="text-[#1C1917]">Gemstone:</strong> {product.specifications.gemstone}</p>}
-                  {product.specifications.weightGrams && <p><strong className="text-[#1C1917]">Gold Weight:</strong> {product.specifications.weightGrams}</p>}
-                  {product.specifications.certification && <p><strong className="text-[#1C1917]">Hallmark & Certification:</strong> {product.specifications.certification}</p>}
-                </div>
-              )}
-
               {activeTab === 'shipping' && (
                 <div className="space-y-2">
-                  <p><strong className="text-[#1C1917]">Castle Hill Atelier Craft:</strong> Every piece is individually handcrafted and hallmarked at our Castle Hill boutique workshop.</p>
-                  <p><strong className="text-[#1C1917]">Certified Authenticity:</strong> Accompanied by authentic gemological dossiers and certification cards.</p>
-                  <p><strong className="text-[#1C1917]">Complimentary In-Store Care:</strong> Lifetime complimentary ultrasonic cleaning and claw inspection at our boutique.</p>
+                  <p><strong className="text-[#1C1917]">Castle Hill Atelier Craft:</strong> Every piece is individually handcrafted at our Castle Hill boutique workshop.</p>
+                  <p><strong className="text-[#1C1917]">Design Authenticity:</strong> Accompanied by authentic Gabriel design dossiers and presentation cases.</p>
+                  <p><strong className="text-[#1C1917]">Complimentary In-Store Care:</strong> Lifetime complimentary cleaning and setting inspection at our boutique.</p>
                 </div>
               )}
 

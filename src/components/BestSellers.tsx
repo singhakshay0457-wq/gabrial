@@ -26,12 +26,8 @@ export const BestSellers: React.FC<BestSellersProps> = ({
   onQuickView,
   onSelectProduct,
 }) => {
-  const [selectedMetal, setSelectedMetal] = useState<string>('All');
   const [sortBy, setSortBy] = useState<SortOption>('featured');
   const [showFilters, setShowFilters] = useState<boolean>(false);
-
-  // Metal Filter Options
-  const metals = ['All', '18K Yellow Gold', '18K White Gold', '18K Rose Gold', 'Platinum'];
 
   // Categories Filter
   const categories: (CategoryType | 'All')[] = ['All', 'Rings', 'Necklaces', 'Earrings', 'Bracelets'];
@@ -49,7 +45,6 @@ export const BestSellers: React.FC<BestSellersProps> = ({
   let filtered = products.filter((p) => {
     if (activeCategory !== 'All' && p.category !== activeCategory) return false;
     if (activeCollection !== 'All' && p.collection !== activeCollection) return false;
-    if (selectedMetal !== 'All' && !p.metalOptions.includes(selectedMetal as any)) return false;
     return true;
   });
 
@@ -110,7 +105,7 @@ export const BestSellers: React.FC<BestSellersProps> = ({
               className="flex items-center gap-2 text-xs uppercase tracking-wider text-[#1C1917] font-medium py-1.5 px-3 border border-[#D4CEBF] hover:border-[#C5A059] bg-[#FAF9F5] transition-colors"
             >
               <SlidersHorizontal className="w-3.5 h-3.5 text-[#C5A059]" />
-              <span>Filters {selectedMetal !== 'All' || activeCollection !== 'All' ? '(Active)' : ''}</span>
+              <span>Collections {activeCollection !== 'All' ? `(${activeCollection})` : ''}</span>
             </button>
 
             <span className="text-xs text-[#57534E] font-light">
@@ -135,66 +130,37 @@ export const BestSellers: React.FC<BestSellersProps> = ({
 
         </div>
 
-        {/* Expanded Filters Panel */}
+        {/* Expanded Collections Filter Panel */}
         {showFilters && (
           <div className="bg-[#F3F0E6] p-6 mb-10 border border-[#E2DDD0] transition-all">
             <div className="flex items-center justify-between mb-4 pb-3 border-b border-[#E2DDD0]">
-              <h4 className="font-serif text-lg font-normal text-[#1C1917]">Refine Atelier Selection</h4>
+              <h4 className="font-serif text-lg font-normal text-[#1C1917]">Select Curated Collection</h4>
               <button
                 onClick={() => {
-                  setSelectedMetal('All');
                   onSelectCollection('All');
                   onSelectCategory('All');
                 }}
                 className="text-xs text-[#C5A059] hover:underline uppercase tracking-wider font-medium flex items-center gap-1"
               >
-                <X className="w-3.5 h-3.5" /> Reset Filters
+                <X className="w-3.5 h-3.5" /> Reset Collections
               </button>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Collection Filter */}
-              <div>
-                <span className="block text-xs uppercase tracking-widest text-[#57534E] font-semibold mb-2">
-                  Collection
-                </span>
-                <div className="flex flex-wrap gap-2">
-                  {collections.map((col) => (
-                    <button
-                      key={col}
-                      onClick={() => onSelectCollection(col)}
-                      className={`text-xs px-3 py-1.5 border transition-colors ${
-                        activeCollection === col
-                          ? 'bg-[#C5A059] text-white border-[#C5A059]'
-                          : 'bg-[#FAF9F5] text-[#1C1917] border-[#D4CEBF] hover:border-[#C5A059]'
-                      }`}
-                    >
-                      {col === 'All' ? 'All Collections' : col}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Metal Filter */}
-              <div>
-                <span className="block text-xs uppercase tracking-widest text-[#57534E] font-semibold mb-2">
-                  Precious Metal
-                </span>
-                <div className="flex flex-wrap gap-2">
-                  {metals.map((metal) => (
-                    <button
-                      key={metal}
-                      onClick={() => setSelectedMetal(metal)}
-                      className={`text-xs px-3 py-1.5 border transition-colors ${
-                        selectedMetal === metal
-                          ? 'bg-[#C5A059] text-white border-[#C5A059]'
-                          : 'bg-[#FAF9F5] text-[#1C1917] border-[#D4CEBF] hover:border-[#C5A059]'
-                      }`}
-                    >
-                      {metal === 'All' ? 'All Metals' : metal}
-                    </button>
-                  ))}
-                </div>
+            <div>
+              <div className="flex flex-wrap gap-2">
+                {collections.map((col) => (
+                  <button
+                    key={col}
+                    onClick={() => onSelectCollection(col)}
+                    className={`text-xs px-4 py-2 border transition-colors ${
+                      activeCollection === col
+                        ? 'bg-[#C5A059] text-white border-[#C5A059] font-medium'
+                        : 'bg-[#FAF9F5] text-[#1C1917] border-[#D4CEBF] hover:border-[#C5A059]'
+                    }`}
+                  >
+                    {col === 'All' ? 'All Collections' : col}
+                  </button>
+                ))}
               </div>
             </div>
           </div>
@@ -217,16 +183,15 @@ export const BestSellers: React.FC<BestSellersProps> = ({
         ) : (
           <div className="text-center py-16 bg-[#F3F0E6] border border-[#E2DDD0]">
             <p className="font-serif text-2xl text-[#1C1917] mb-2">No pieces match your current filter criteria.</p>
-            <p className="text-xs text-[#57534E] mb-6">Try resetting filters to discover Gabriel’s full fine jewellery suite.</p>
+            <p className="text-xs text-[#57534E] mb-6">Try resetting collections to discover Gabriel’s full fine jewellery suite.</p>
             <button
               onClick={() => {
                 onSelectCategory('All');
                 onSelectCollection('All');
-                setSelectedMetal('All');
               }}
               className="bg-[#1C1917] text-[#FAF9F5] px-6 py-2.5 text-xs uppercase tracking-widest hover:bg-[#C5A059] transition-colors"
             >
-              Clear All Filters
+              Show All Designs
             </button>
           </div>
         )}

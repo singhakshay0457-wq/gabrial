@@ -87,10 +87,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       {/* Details Container */}
       <div className="p-5 flex-1 flex flex-col justify-between">
         <div>
-          {/* Category & Metal info */}
+          {/* Category info */}
           <div className="flex items-center justify-between text-[11px] text-[#C5A059] uppercase tracking-widest font-medium mb-1.5">
             <span>{product.category}</span>
-            <span className="text-[#57534E] text-[10px]">{product.defaultMetal}</span>
+            <span className="text-[#A8A29E] text-[10px]">{product.collection}</span>
           </div>
 
           {/* Product Name */}
@@ -101,10 +101,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             {product.name}
           </h3>
 
-          {/* Subtitle / Spec summary */}
-          <p className="text-xs text-[#57534E] line-clamp-1 mb-3 font-light">
-            {product.subtitle || product.specifications.diamondCarat || product.specifications.metalPurity}
-          </p>
+          {/* Subtitle */}
+          {product.subtitle && (
+            <p className="text-xs text-[#57534E] line-clamp-1 mb-3 font-light">
+              {product.subtitle}
+            </p>
+          )}
 
           {/* Rating / Certification */}
           <div className="flex items-center gap-1.5 mb-3 text-xs text-[#57534E]">
@@ -114,7 +116,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             </div>
             <span className="text-[10px] text-[#A8A29E]">({product.reviewCount})</span>
             <span className="text-[10px] text-[#C5A059] font-medium ml-auto flex items-center gap-1">
-              <Sparkles className="w-3 h-3" /> Certified Design
+              <Sparkles className="w-3 h-3" /> Certified Atelier
             </span>
           </div>
         </div>
@@ -122,9 +124,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         {/* Pure Design Showcase Action */}
         <div className="pt-3 border-t border-[#F0ECE1] flex items-center justify-between mt-auto">
           <div>
-            <span className="text-[10px] uppercase tracking-wider text-[#A8A29E] block">Atelier Build</span>
-            <span className="font-serif text-xs font-medium text-[#1C1917] truncate max-w-[120px] block">
-              {product.specifications.metalPurity}
+            <span className="text-[10px] uppercase tracking-wider text-[#A8A29E] block">Castle Hill Boutique</span>
+            <span className="font-serif text-xs font-medium text-[#1C1917] truncate block">
+              Handcrafted Design
             </span>
           </div>
 
