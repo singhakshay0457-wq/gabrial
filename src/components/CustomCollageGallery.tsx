@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import { ATELIER_CUSTOM_DESIGNS, CustomDesignItem } from '../data/bespokeDesigns';
-import { Sparkles, Hammer, ShieldCheck, ArrowRight, ZoomIn, X, Phone, Calendar } from 'lucide-react';
+import { Sparkles, Phone, X, ZoomIn } from 'lucide-react';
 
-interface CustomCollageGalleryProps {}
-
-export const CustomCollageGallery: React.FC<CustomCollageGalleryProps> = () => {
+export const CustomCollageGallery: React.FC = () => {
   const [selectedPiece, setSelectedPiece] = useState<CustomDesignItem | null>(null);
 
-  // High-res visual assets matching user's custom bespoke creations
+  // High-fidelity fallback imagery for custom craftsmanship pieces
   const imageMap: Record<string, string> = {
     'bespoke-001': 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&q=80&w=1200',
     'bespoke-002': 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&q=80&w=1200',
@@ -17,21 +15,26 @@ export const CustomCollageGallery: React.FC<CustomCollageGalleryProps> = () => {
   };
 
   return (
-    <section id="gallery-showcase-section" className="py-20 bg-[#181614] text-[#FAF9F5] relative overflow-hidden border-t border-[#332F2A]">
-      {/* Background Decorative Accents */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
+    <section id="gallery-showcase-section" className="py-24 bg-[#181614] text-[#FAF9F5] relative overflow-hidden border-t border-[#2C2825]">
+      
+      {/* Background Subtle Accent */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#C5A059]/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal leading-tight text-[#FAF9F5]">
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <div className="inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.3em] text-[#C5A059] font-medium mb-3">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>Castle Hill Atelier Craft</span>
+          </div>
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal text-white tracking-tight">
             Masterpieces & Workbench Showcase
           </h2>
           <div className="w-16 h-[1px] bg-[#C5A059] mx-auto my-4" />
           <p className="text-sm text-[#D4CEBF] font-light leading-relaxed">
-            A collage showcase of fine engagement rings, high fine pendants, and intricate gemstone settings handcrafted at our Castle Hill workshop.
+            A visual showcase of fine engagement rings, high fine pendants, and intricate gemstone settings handcrafted at our Castle Hill workshop.
           </p>
         </div>
 
@@ -51,21 +54,13 @@ export const CustomCollageGallery: React.FC<CustomCollageGalleryProps> = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#181614] via-[#181614]/50 to-transparent" />
             
-            <div className="relative z-10 space-y-2">
-              <div className="flex items-center justify-between">
-                <span className="text-[10px] uppercase tracking-widest bg-[#C5A059] text-white px-2.5 py-1 font-semibold">
-                  {ATELIER_CUSTOM_DESIGNS[0].tag}
-                </span>
-                <span className="text-xs text-[#E8D3A7] flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <ZoomIn className="w-3.5 h-3.5" /> View Design
-                </span>
-              </div>
-              <h3 className="font-serif text-2xl sm:text-3xl text-white font-normal group-hover:text-[#E8D3A7] transition-colors">
-                {ATELIER_CUSTOM_DESIGNS[0].title}
-              </h3>
-              <p className="text-xs text-[#D4CEBF] font-light line-clamp-2 max-w-xl">
-                {ATELIER_CUSTOM_DESIGNS[0].description}
-              </p>
+            <div className="relative z-10 flex items-center justify-between">
+              <span className="text-[10px] uppercase tracking-widest bg-[#C5A059] text-white px-2.5 py-1 font-semibold">
+                {ATELIER_CUSTOM_DESIGNS[0].tag}
+              </span>
+              <span className="text-xs text-[#E8D3A7] flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                <ZoomIn className="w-3.5 h-3.5" /> View Design
+              </span>
             </div>
           </div>
 
@@ -82,16 +77,13 @@ export const CustomCollageGallery: React.FC<CustomCollageGalleryProps> = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#181614] via-[#181614]/50 to-transparent" />
             
-            <div className="relative z-10 space-y-2">
+            <div className="relative z-10 flex items-center justify-between">
               <span className="text-[10px] uppercase tracking-widest bg-[#211E1B]/80 text-[#C5A059] border border-[#C5A059]/40 px-2.5 py-1 font-semibold inline-block">
                 {ATELIER_CUSTOM_DESIGNS[1].tag}
               </span>
-              <h3 className="font-serif text-2xl text-white font-normal group-hover:text-[#E8D3A7] transition-colors">
-                {ATELIER_CUSTOM_DESIGNS[1].title}
-              </h3>
-              <p className="text-xs text-[#D4CEBF] font-light line-clamp-2">
-                {ATELIER_CUSTOM_DESIGNS[1].description}
-              </p>
+              <span className="text-xs text-[#E8D3A7] flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                <ZoomIn className="w-3.5 h-3.5" /> View Design
+              </span>
             </div>
           </div>
 
@@ -110,13 +102,13 @@ export const CustomCollageGallery: React.FC<CustomCollageGalleryProps> = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#181614] via-[#181614]/60 to-transparent" />
             
-            <div className="relative z-10 space-y-1.5">
+            <div className="relative z-10 flex items-center justify-between">
               <span className="text-[10px] uppercase tracking-widest text-[#E8D3A7] font-semibold">
                 {ATELIER_CUSTOM_DESIGNS[2].category}
               </span>
-              <h4 className="font-serif text-xl text-white font-normal group-hover:text-[#E8D3A7] transition-colors">
-                {ATELIER_CUSTOM_DESIGNS[2].title}
-              </h4>
+              <span className="text-xs text-[#E8D3A7] flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                <ZoomIn className="w-3.5 h-3.5" /> View Design
+              </span>
             </div>
           </div>
 
@@ -133,13 +125,13 @@ export const CustomCollageGallery: React.FC<CustomCollageGalleryProps> = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#181614] via-[#181614]/60 to-transparent" />
             
-            <div className="relative z-10 space-y-1.5">
+            <div className="relative z-10 flex items-center justify-between">
               <span className="text-[10px] uppercase tracking-widest text-[#E8D3A7] font-semibold">
                 {ATELIER_CUSTOM_DESIGNS[3].category}
               </span>
-              <h4 className="font-serif text-xl text-white font-normal group-hover:text-[#E8D3A7] transition-colors">
-                {ATELIER_CUSTOM_DESIGNS[3].title}
-              </h4>
+              <span className="text-xs text-[#E8D3A7] flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                <ZoomIn className="w-3.5 h-3.5" /> View Design
+              </span>
             </div>
           </div>
 
@@ -156,13 +148,13 @@ export const CustomCollageGallery: React.FC<CustomCollageGalleryProps> = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#181614] via-[#181614]/70 to-transparent" />
             
-            <div className="relative z-10 space-y-1.5">
-              <span className="text-[10px] uppercase tracking-widest text-[#C5A059] font-semibold flex items-center gap-1">
-                <Hammer className="w-3 h-3" /> {ATELIER_CUSTOM_DESIGNS[4].tag}
+            <div className="relative z-10 flex items-center justify-between">
+              <span className="text-[10px] uppercase tracking-widest text-[#C5A059] font-semibold">
+                {ATELIER_CUSTOM_DESIGNS[4].tag}
               </span>
-              <h4 className="font-serif text-xl text-white font-normal group-hover:text-[#E8D3A7] transition-colors">
-                {ATELIER_CUSTOM_DESIGNS[4].title}
-              </h4>
+              <span className="text-xs text-[#E8D3A7] flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                <ZoomIn className="w-3.5 h-3.5" /> View Design
+              </span>
             </div>
           </div>
 
@@ -198,12 +190,9 @@ export const CustomCollageGallery: React.FC<CustomCollageGalleryProps> = () => {
               <X className="w-6 h-6" />
             </button>
 
-            <span className="text-[10px] uppercase tracking-[0.3em] text-[#C5A059] block mb-1 font-semibold">
+            <span className="text-[10px] uppercase tracking-[0.3em] text-[#C5A059] block mb-4 font-semibold">
               {selectedPiece.category} • {selectedPiece.tag}
             </span>
-            <h3 className="font-serif text-2xl sm:text-3xl font-normal text-[#FAF9F5] mb-4">
-              {selectedPiece.title}
-            </h3>
 
             <div className="aspect-[16/10] overflow-hidden border border-[#C5A059]/30 mb-6 bg-black">
               <img 
@@ -214,9 +203,6 @@ export const CustomCollageGallery: React.FC<CustomCollageGalleryProps> = () => {
               />
             </div>
 
-            <p className="text-sm text-[#D4CEBF] font-light leading-relaxed mb-4">
-              {selectedPiece.description}
-            </p>
             <p className="text-xs text-[#A8A29E] font-light leading-relaxed mb-6 italic border-l-2 border-[#C5A059] pl-3">
               "{selectedPiece.details}"
             </p>
